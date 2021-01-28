@@ -1,2 +1,2 @@
 # webGISDevelopment
-Scratch Workspace for Assignments and Fooling Around
+Thsi repository contains practice files/ acts as a workspace for playing around. 
