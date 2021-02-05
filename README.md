@@ -1,7 +1,7 @@
 # webGISDevelopment
 Thsi repository contains practice files/ acts as a workspace for playing around. 
 
-Week 1 and 2 Checklist:
+Week 1 and 2 Checklist: For All Maps, Visit https://google.ca
 
 Item 1: Read about Google Maps Platform
 API Key: AIzaSyCBaxJcbecCbBJKaI7dhVyRUvH1i-1gkZ4
@@ -31,3 +31,4 @@ Item 5: Google JavaScript API
 
 Item 6: Option 1: create a map with Google Maps JavaScript API
 1.	See Hillforts.html
+
