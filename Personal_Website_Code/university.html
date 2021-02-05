@@ -1,0 +1,62 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE&callback=initMap&libraries=&v=weekly"
+        defer
+      ></script>
+      <style type="text/css">
+        #map {
+          height: 400px;
+          width: 80%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+  
+        }
+        h3 {
+            text-align: center;
+            color: brown;
+        }
+      </style>
+      <script>
+        // Initialize and add the map
+        function initMap() {
+          // The location of King's College
+          const kings = { lat: 44.63747, lng: -63.59487 };
+          // The map, centered at King's College
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: kings,
+          });
+          // The marker, positioned at King's College
+          const marker = new google.maps.Marker({
+            position: kings,
+            map: map,
+          });
+        }
+      </script>
+    </head>
+    <body>
+        <div class="container">
+            <img src="Images\SmokeLake.jpg" alt="Smoke Lake - Tom Thomson" width="100%">
+            <div class="PageTitle">eRIC miLLan<br>
+                <div class="subtitle">Designer, Cartographer, Hiker</div>    
+            </div>
+        </div>
+        <div class="topNav">
+                <div class="navLinks">
+                <a href="#Home">Home</a>
+                <a href="#News">About</a>
+                <a href="#News">Maps</a>
+                <a href="#News">Projects</a>
+                <a href="#News">Contact</a>
+            </div>
+        </div>
+        <h3>King's College</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+    </body>
+</html>
