@@ -1,0 +1,89 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Provinces of Canada</title>
+        <style>
+          html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+          }
+        </style>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
+      
+        <script>
+        require([
+          "esri/config",
+          "esri/Map",
+          "esri/views/MapView",
+      
+          "esri/layers/FeatureLayer"
+      
+        ], function(esriConfig,Map, MapView, FeatureLayer) {
+      
+        esriConfig.apiKey = "AAPK3734bbd19b04482ca988b10cbce2b893eAkXnePTTtPDxgmT-QSjsF6ssq67W0MOsDzQYE4KiHnqSIHC7ATkzuOdPELLfLSV";
+      
+        const map = new Map({
+          basemap: "gray"
+        });
+      
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-97.80543,50.02700],
+          zoom: 4
+        });
+      
+      //Define a Popup for Provinces:
+      const popupProvinces = {
+          "title": "Provinces of Canada", 
+          "content": "<b>Name:</b> {PRNAME}<br>"
+      }
+      
+      // Reference Layer from Luna Server)
+        const ProvinceLayer = new FeatureLayer({
+          url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/eMillanCanada/MapServer/0",
+          outfields: ["PRNAME"],
+          popupTemplate: popupProvinces
+        });
+      
+      
+        map.add(ProvinceLayer, 0);
+      
+        });
+      </script>
+    </head>
+    <body>
+        <div class="container">
+            <img src="Images\SmokeLake.jpg" alt="Smoke Lake - Tom Thomson" width="100%">
+            <div class="PageTitle">eRIC miLLan<br>
+                <div class="subtitle">Designer, Cartographer, Hiker</div>    
+            </div>
+        </div>
+        <div class="topNav">
+                <div class="navLinks">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Maps">Maps</a>
+                <a href="#Projects">Projects</a>
+                <a href="#News">Contact</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="viewDiv"></div>
+    </body>
+</html>
+
+
+
+
+
+</body>
+</html>
